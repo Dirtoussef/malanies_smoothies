@@ -1,4 +1,7 @@
-# requirements.txt
-  -snowflake-snowpark-python
+name: app_environment
+channels:
+  - snowflake
+dependencies:
+  - python=3.9  # Utilise bien Python 3.9, car Snowflake ne supporte pas 3.11 sur ton instance
+  - snowflake-snowpark-python
   - streamlit
-  - requests
