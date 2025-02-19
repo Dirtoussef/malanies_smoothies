@@ -6,7 +6,6 @@ import requests
 # Fetching data from SmoothieFroot API
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
 st.text(smoothiefroot_response.json())
-sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
 
 # Establishing Snowflake connection
 cnx = st.connection("snowflake")
@@ -17,7 +16,7 @@ st.title("Customize your Smoothie 🥤")
 
 # Fetching fruit options from Snowflake
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
-
+sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
 # Adding text input for name on order
 name_on_order = st.text_input('Name on Smoothie:')
 st.write('The name on your smoothie will be', name_on_order)
