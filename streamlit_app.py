@@ -2,7 +2,7 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 import requests
-#
+
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
 
 # Display the JSON response properly
@@ -43,5 +43,4 @@ if ingredients_list:
             st.success('Your Smoothie is ordered!', icon="✅")
         except Exception as e:
             st.error(f"An error occurred while ordering your smoothie: {e}")
-  
  
