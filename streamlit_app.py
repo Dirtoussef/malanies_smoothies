@@ -16,7 +16,7 @@ st.title("Customize your Smoothie 🥤")
 
 # Fetching fruit options from Snowflake
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
-sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
+
 # Adding text input for name on order
 name_on_order = st.text_input('Name on Smoothie:')
 st.write('The name on your smoothie will be', name_on_order)
@@ -34,7 +34,7 @@ if ingredients_list:
     # Prepare SQL insert statement
     # Corrected the SQL string formatting to include both ingredients and name
     my_insert_stmt = f"""INSERT INTO smoothies.public.orders(ingredients, name_on_order) VALUES ('{ingredients_string}', '{name_on_order}')"""
-
+    sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True)
     # Button to submit the order
     time_to_insert = st.button('Submit Order')
 
