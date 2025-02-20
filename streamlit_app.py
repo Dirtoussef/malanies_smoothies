@@ -32,9 +32,9 @@ ingredients_list = st.multiselect(
 )
 
 if ingredients_list:
-    ingredients_string = ' '
+    ingredients_string = ' '.join(ingredients_list)
     for fruit_chosen in ingredients_list:
-      ingredients_string = ' '.join(ingredients_list)
+      
       
       
       # st.write('The search value for ', fruit_chosen, ' is ' , search_on, ',')
