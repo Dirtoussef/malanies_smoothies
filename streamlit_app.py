@@ -35,11 +35,12 @@ if ingredients_list:
     ingredients_string = ' '
     for fruit_chosen in ingredients_list:
       ingredients_string+= fruit_chosen + ' '
+      st.subheader(fruit_chosen + ' Nutrition Information')
       
       # st.write('The search value for ', fruit_chosen, ' is ' , search_on, ',')
       
       smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + fruit_chosen )
-      f_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True) 
+      sf_df=st.dataframe(data=smoothiefroot_response.json(),use_container_width=True) 
       #fruityvice_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on )
       #fv_df=st.dataframe(data=fruityvice_response.json(),use_container_width=True)
     
