@@ -50,12 +50,12 @@ if ingredients_list:
        
     # Prepare SQL insert statement
     # Corrected the SQL string formatting to include both ingredients and name
-      my_insert_stmt = f"""INSERT INTO smoothies.public.orders(ingredients, name_on_order) VALUES ('{ingredients_string}', '{name_on_order}')"""
+    my_insert_stmt = f"""INSERT INTO smoothies.public.orders(ingredients, name_on_order) VALUES ('{ingredients_string}', '{name_on_order}')"""
        
     # Button to submit the order
-time_to_insert = st.button('Submit Order')
+    time_to_insert = st.button('Submit Order')
 
-      if time_to_insert:
+    if time_to_insert:
           try:
              session.sql(my_insert_stmt).collect()
              st.success('Your Smoothie is ordered!', icon="✅")
