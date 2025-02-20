@@ -27,14 +27,14 @@ st.write('The name on your smoothie will be', name_on_order)
 # User interface for selecting ingredients
 ingredients_list = st.multiselect(
     'Choose up to 5 ingredients:',
-    options=my_dataframe.to_pandas()['FRUIT_NAME'].tolist(),  # Convert Snowpark DataFrame to Pandas for multiselect
+    options=pd_df['FRUIT_NAME'].tolist(),  # Convert Snowpark DataFrame to Pandas for multiselect
     max_selections=5
 )
 
 if ingredients_list:
     ingredients_string = ' '
     for fruit_chosen in ingredients_list:
-      ingredients_string+= fruit_chosen + ' '
+     ingredients_string = ' '.join(ingredients_list)
       
       
       # st.write('The search value for ', fruit_chosen, ' is ' , search_on, ',')
